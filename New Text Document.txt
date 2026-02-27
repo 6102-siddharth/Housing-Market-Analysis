@@ -1,0 +1,101 @@
+project objective:
+		Objective: To analyze housing market trends and identify key factors affecting house prices.
+		
+STEP 2: Data Cleaning (Excel / Power Query)
+Tools:
+Excel
+Power Query Editor
+ What to do:
+
+Remove duplicate rows
+Handle missing values
+Fix column names
+Convert data types properly
+Remove outliers (if needed)
+
+In Power Query:
+Use Remove Duplicates
+Change Data Type
+Replace null values
+Trim & Clean text
+Save cleaned dataset.
+
+3. Load Data into MySQL (Database Work)
+ Tool:
+MySQL
+🔹 Steps:
+Create Database
+CREATE DATABASE housing_db;
+
+Create Table
+Import CSV into MySQL
+Run Important Queries:
+
+-- Average price by location
+SELECT location, AVG(price) 
+FROM housing 
+GROUP BY location;
+
+-- Count of houses by furnishing status
+SELECT furnishing_status, COUNT(*) 
+FROM housing 
+GROUP BY furnishing_status;
+
+-- Top 5 expensive houses
+SELECT * 
+FROM housing 
+ORDER BY price DESC 
+LIMIT 5;
+
+STEP 4: Exploratory Data Analysis (Python)
+Tools:
+
+Python
+
+Pandas
+Matplotlib
+Seaborn
+
+🔹 Steps:
+Load Data
+
+import pandas as pd
+df = pd.read_csv("housing.csv")
+Check basic info
+df.info()
+df.describe()
+Correlation
+df.corr()
+
+Visualization:
+Price vs Area (Scatter plot)
+Price distribution (Histogram)
+Correlation heatmap
+This shows analytical thinking.
+
+Build Dashboard (Power BI)
+Tool:
+
+Power BI
+🔹 Steps:
+Load cleaned dataset
+Create relationships (if needed)
+Create Measures (DAX)
+Example:
+Average Price = AVERAGE(Housing[price])
+
+Create Visuals:
+KPI card → Average price
+Bar chart → Avg price by location
+Pie chart → Furnishing status
+Line chart → Price vs Area
+Filters (Slicers)
+
+
+
+Write Project Description
+• Conducted end-to-end data analysis on 20,000+ housing records
+• Performed ETL using Power Query
+• Used MySQL to analyze pricing trends
+• Conducted EDA using Python (Pandas, Seaborn)
+• Built interactive Power BI dashboard with 8+ KPIs
